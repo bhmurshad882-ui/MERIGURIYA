@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday MERI GURIYA 🎂</title>
+<link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+<div id="welcomeOverlay" class="welcome-overlay">
+  <div class="welcome-card">
+    <div class="welcome-icon">🎂 🎵 ✨</div>
+    <h2>Happy Birthday MERI GURIYA!</h2>
+    <p>Aapke liye ek pyaara sa surprise tayyar hai... 🌸</p>
+    <button id="enterBtn" class="welcome-btn">Surprise Kholo 🎶</button>
+  </div>
+</div>
+
+<canvas id="confetti"></canvas>
+<div id="balloons"></div>
+<audio id="bdaySong" src="music.mp3" preload="auto" loop playsinline></audio>
+<button id="musicBtn" title="Play music">🔇</button>
+
+<header>
+  <h1>Happy Birthday, MERI GURIYA! 🎂</h1>
+  <div class="subtitle">Ek chhoti si wish, sirf aapke liye... ✨</div>
+  <div class="hearts-line">💖 🎈 🎉 🎈 💖</div>
+</header>
+
+<nav id="tabNav">
+  <button data-tab="home" class="active">🏠 Home</button>
+  <button data-tab="reasons">💗 Reasons</button>
+  <button data-tab="quiz">❓ Quiz</button>
+  <button data-tab="wishes">🌟 Wishes</button>
+  <button data-tab="cake">🕯️ Candles</button>
+  <button data-tab="thanks">🙏 Thank You</button>
+</nav>
+
+<main>
+
+  <section class="page active" id="page-home">
+    <div class="card">
+      <h2>Aaj ka din khaas hai 🌸</h2>
+      <div class="message-box"><span id="typedText"></span><span class="cursor">&nbsp;</span></div>
+    </div>
+
+    <div class="card" id="midnightCard">
+      <h2 id="midnightTitle">⏰</h2>
+      <div id="liveClock" style="font-size:2rem; font-weight:bold; color:var(--accent); letter-spacing:2px; margin:8px 0;"></div>
+      <p id="midnightMsg" style="font-size:1.05rem; line-height:1.8;"></p>
+    </div>
+
+    <div class="card">
+      <h2>Ek chhota sa letter 💌</h2>
+      <div class="envelope" id="envelope">
+        <div class="flap"></div><div class="body"></div>
+      </div>
+      <div class="letter-full" id="fullLetter">
+        <p>Kakka, jab se tumse mulaqat hui hai, meri normal si zindagi bhi bht zyada special ho gaye hai. Pata nahi kab tumhare liye mere dil mein ek alag hi jagah ban gayi. Aaj ke din bas itna kehna chahta hoon — tum jaisi ho, waisi hi bohot khaas ho, aur mujhe tumhara saath acha lagta hai. 🌷</p>
+        <p>Happy Birthday, aur dua hai ye saal tumhare liye khushiyon se bhara ho. 🎂💫</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Chhoti si baatein 💭</h2>
+      <div id="quoteText"></div>
+      <button class="pill-btn" id="nextQuote">Agla 💗</button>
+    </div>
+
+    <div class="card">
+      <h2>MERI GURIYA</h2>
+      <p style="font-size:.85rem; opacity:.8;">Happy Birthday KAKKA! Allah pak hamesha khush rakha app ko.</p>
+    </div>
+
+    <div class="card">
+      <h2>Yaadon ka Album 📸</h2>
+      <p style="opacity:.75; font-size:.85rem;">Bas kuch purani yaadein mai or tum</p>
+      <div class="gallery" id="gallery"></div>
+    </div>
+    <button class="pill-btn" id="albumReasonsBtn" style="margin-top:6px;">Aage Badho 💗</button>
+  </section>
+
+  <section class="page" id="page-reasons">
+    <div class="card">
+      <h2>Tum Khaas Kyun Ho 💗</h2>
+      <ul class="reasons-list">
+        <li>🌷 Wese to bht reason hai chalo kuch bata deta hn</li>
+        <li>🌷 Tum jitni caring ho, utna hi acha lagta hai baat karke</li>
+        <li>🌷 Tumhari baaton mein ek pyaar hai jo bohot pasand hai</li>
+        <li>🌷 Tum jaisi ho, bilkul waisi bht pyaari hoo mujhe</li>
+        <li>🌷 Tumhare saath waqt beetna nahi pata chalta</li>
+      </ul>
+    </div>
+    <button class="pill-btn" id="reasonsQuizBtn" style="margin-top:6px;">Aage Badho 💗</button>
+  </section>
+
+  <section class="page" id="page-quiz">
+    <div class="card">
+      <h2>Mini Quiz ❓</h2>
+      <div class="quiz-q">
+        <p>1. Aaj kis khaas insaan ka birthday hai?</p>
+        <div class="quiz-opts">
+          <button data-correct="true">MERI GURIYA</button>
+          <button>Koi Aur</button>
+        </div>
+      </div>
+      <div class="quiz-q">
+        <p>2. Ye website kisne banayi?</p>
+        <div class="quiz-opts">
+          <button data-correct="true">Hai ik pagal chooza</button>
+          <button>Random Stranger</button>
+        </div>
+      </div>
+      <div id="quizResult"></div>
+    </div>
+    <button class="pill-btn" id="quizWishesBtn" style="margin-top:6px;">Aage Badho 💗</button>
+  </section>
+
+  <section class="page" id="page-wishes">
+    <div class="card">
+      <h2>Is Saal Ke Liye Wishes 🌟</h2>
+      <ul class="wish-list">
+        <li>Tum hamesha Khush raho</li>
+        <li>Jo bhi chaho wo sab mile</li>
+        <li>Tumhara har din pehle se acha ho</li>
+        <li>Aur haan, bht pyaari hai tu mujhe💗</li>
+      </ul>
+    </div>
+    <button class="pill-btn" id="wishesToCakeBtn" style="margin-top:6px;">Aage Badho 💗</button>
+  </section>
+
+  <section class="page" id="page-cake">
+    <div class="card">
+      <h2>Ab candles bujha do 🕯️</h2>
+      <svg id="cake" viewBox="0 0 240 260" xmlns="http://www.w3.org/2000/svg">
+        <!-- base tier -->
+        <ellipse cx="120" cy="230" rx="105" ry="14" fill="#f3e9ea"/>
+        <rect x="20" y="180" width="200" height="55" rx="10" fill="#fdf6f5"/>
+        <rect x="20" y="178" width="200" height="12" rx="6" fill="#f6c9d3"/>
+        <!-- middle tier -->
+        <ellipse cx="120" cy="178" rx="80" ry="12" fill="#f3e9ea"/>
+        <rect x="45" y="130" width="150" height="50" rx="10" fill="#fdf6f5"/>
+        <rect x="45" y="128" width="150" height="10" rx="5" fill="#f6c9d3"/>
+        <!-- top tier -->
+        <ellipse cx="120" cy="128" rx="58" ry="10" fill="#f3e9ea"/>
+        <rect x="65" y="88" width="110" height="42" rx="10" fill="#fdf6f5"/>
+        <!-- decorative roses (simple layered circles) -->
+        <g>
+          <circle cx="95" cy="205" r="14" fill="#f2b8c6"/><circle cx="95" cy="205" r="8" fill="#f9d6e0"/>
+          <circle cx="135" cy="212" r="12" fill="#fdf3f0"/><circle cx="135" cy="212" r="6" fill="#f6dfe2"/>
+          <circle cx="165" cy="200" r="13" fill="#f2b8c6"/><circle cx="165" cy="200" r="7" fill="#f9d6e0"/>
+          <circle cx="70" cy="155" r="12" fill="#f2b8c6"/><circle cx="70" cy="155" r="6" fill="#f9d6e0"/>
+          <circle cx="115" cy="160" r="11" fill="#fdf3f0"/><circle cx="115" cy="160" r="5" fill="#f6dfe2"/>
+          <circle cx="150" cy="150" r="12" fill="#f2b8c6"/><circle cx="150" cy="150" r="6" fill="#f9d6e0"/>
+          <circle cx="100" cy="108" r="11" fill="#f2b8c6"/><circle cx="100" cy="108" r="6" fill="#f9d6e0"/>
+          <circle cx="135" cy="105" r="10" fill="#fdf3f0"/><circle cx="135" cy="105" r="5" fill="#f6dfe2"/>
+        </g>
+        <!-- pearls -->
+        <g fill="#fffdf8" stroke="#e9d3d6" stroke-width="0.5">
+          <circle cx="60" cy="195" r="3"/><circle cx="185" cy="190" r="3"/><circle cx="45" cy="215" r="3"/>
+          <circle cx="55" cy="145" r="2.5"/><circle cx="180" cy="148" r="2.5"/>
+          <circle cx="80" cy="98" r="2.5"/><circle cx="160" cy="100" r="2.5"/>
+        </g>
+        <!-- candles on top -->
+        <g class="candle"><rect x="95" y="60" width="7" height="26" fill="#fff"/><ellipse class="flame" cx="98.5" cy="55" rx="6" ry="10" fill="#ffb703"/></g>
+        <g class="candle"><rect x="117" y="52" width="7" height="34" fill="#fff"/><ellipse class="flame" cx="120.5" cy="47" rx="6" ry="10" fill="#ffb703"/></g>
+        <g class="candle"><rect x="139" y="60" width="7" height="26" fill="#fff"/><ellipse class="flame" cx="142.5" cy="55" rx="6" ry="10" fill="#ffb703"/></g>
+      </svg>
+      <p style="font-size:.85rem; opacity:.75;">Har candle pe click karo bujhane ke liye</p>
+      <p id="cakeFinal" style="display:none; margin-top:16px; font-size:1.05rem; color:var(--accent); font-weight:bold;">🎉 Happy Birthday MERI GURIYA! Mera pyaara kakka. 💗</p>
+    </div>
+    <button class="pill-btn" id="cakeToThanksBtn" style="margin-top:6px;">Aage Badho 💗</button>
+  </section>
+
+  <section class="page" id="page-thanks">
+    <div class="card">
+      <h2>Thank You 🙏</h2>
+      <p style="font-size:1rem; line-height:1.8;">Umeed hai appko pasand aayi hogi, yeh ik chota pyaari si wish meri taraf se app kaa liyaa. 😊</p>
+      <div class="signature">— App ka chooza ✨</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>Made with 💗 for MERI GURIYA's birthday</footer>
+
+<script src="script.js?v=8"></script>
+</body>
+</html>
